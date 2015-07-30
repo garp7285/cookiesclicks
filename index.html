@@ -10,24 +10,43 @@
 	<script src="js/controllers/grandma.js"></script>
 	<script src="js/services/cookies.js"></script>
 	<script src="js/controllers/cookiectrl.js"></script>
+	<script src="js/controllers/farm.js"></script>
 
 </head>
 <body >
-<div ng-controller="cookieCtrl">
-	<h2>Total: {{cookies.cookies}}</h2>
-	<button ng-click="incrementaCookie()">COOKIE!</button>
+<div style="float: left; width: 25%;" ng-controller="cookieCtrl">
+	<h1>Cookies: {{cookies.cookies}}</h1>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Choco_chip_cookie.png"  style="width:90%" ng-click="incrementaCookie()">
 
 </div>
 
-<br/>
-<div ng-controller="grandmaCtrl">
+
+<div style="float: left" ng-controller="grandmaCtrl">
 	
-	<button ng-click="buyGrandma()"> buy a grandma</button>
+	<button ng-click="buyGrandma()"> 
+
+	<h3>Grandma</h3>
+	<h4>bakes a cookie every second</h4>
 	<p>cost: {{cost}}</p>
 	<p> grandmas buyed: {{grandmas}}</p>
-	<p>{{advice}}</p>
+	<h5>{{advice}}</h5>
+	</button>
+	
+	
 </div>
+<div style="float: left" ng-controller="farmCtrl">
+	
+	<button ng-click="buyFarm()"> 
 
+	<h3>Farm</h3>
+	<h4>bakes 10 cookies every second</h4>
+	<p>cost: {{cost}}</p>
+	<p> farms buyed: {{farms}}</p>
+	<h5>{{advice}}</h5>
+	</button>
+	
+	
+</div>
 
 	
 </body>

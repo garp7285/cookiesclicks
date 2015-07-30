@@ -2,15 +2,14 @@ angular.module('mainApp')
 	.controller('grandmaCtrl', ['$scope', 'cookies', function ($scope, cookies) {
 		$scope.cookies = cookies
 		$scope.grandmas = 0
-		$scope.speed = 2000
-		$scope.cost = 10
+		$scope.speed = 1000
+		$scope.cost = 50
 		$scope.advice=""
 
 
 
 		setInterval(function(){ 
 			cookies.cookies = parseInt(cookies.cookies) + 1 * $scope.grandmas;
-			console.log(cookies.cookies)
 			$scope.$apply();
 			
 		}, $scope.speed);
@@ -20,13 +19,15 @@ angular.module('mainApp')
 
 			if (cookies.cookies < $scope.cost){
 
-				$scope.advice = "you can't buy BITCH!"
+				$scope.advice = "you can't buy grandmas BITCH!"
 			}
 			else {
 
 				cookies.cookies = cookies.cookies - $scope.cost;
 				$scope.grandmas = $scope.grandmas + 1;
 				$scope.advice=""
+				$scope.cost= $scope.cost + $scope.grandmas * 4;
+
 			}
 
 
