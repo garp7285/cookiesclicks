@@ -1,0 +1,1 @@
+angular.module('mainApp').value('cookies', {'cookies': 0, 'cps': 0} );
